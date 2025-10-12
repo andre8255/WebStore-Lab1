@@ -1,0 +1,14 @@
+# Build results
+bin/
+obj/
+TestResults/
+.vscode/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.local.json
+node_modules/
+wwwroot/build/
+ClientApp/node_modules/

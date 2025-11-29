@@ -80,10 +80,12 @@ public class ApplicationDbContext : IdentityDbContext<User, IdentityRole<int>, i
             .HasForeignKey(s => s.AddressId);
 
         // 1:M StationaryStore–StationaryStoreEmployee
+        // ZMIANA TUTAJ: Dodano OnDelete(DeleteBehavior.Restrict)
         b.Entity<StationaryStoreEmployee>()
             .HasOne(e => e.StationaryStore)
             .WithMany(s => s.Employees)
-            .HasForeignKey(e => e.StationaryStoreId);
+            .HasForeignKey(e => e.StationaryStoreId)
+            .OnDelete(DeleteBehavior.Restrict); 
 
         // N:M Order–Product (encja asocjacyjna)
         b.Entity<OrderProduct>().HasKey(op => new { op.OrderId, op.ProductId });

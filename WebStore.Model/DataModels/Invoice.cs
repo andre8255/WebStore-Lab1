@@ -8,5 +8,5 @@ public string Number { get; set; } = default!;
 public DateTime IssuedAt { get; set; } = DateTime.UtcNow;
 
 
-public ICollection<Order> Orders { get; set; } = new List<Order>(); // 1:M Invoice–Order
+public virtual ICollection<Order> Orders { get; set; } = new List<Order>(); // 1:M Invoice–Order
 }

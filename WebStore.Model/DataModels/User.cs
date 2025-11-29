@@ -14,20 +14,20 @@ public DateTime RegistrationDate { get; set; } = DateTime.UtcNow;
 
 public class Customer : User
 {
-public Address? Address { get; set; }
+public virtual  Address? Address { get; set; }
 public int? AddressId { get; set; }
-public ICollection<Order> Orders { get; set; } = new List<Order>();
+public virtual  ICollection<Order> Orders { get; set; } = new List<Order>();
 }
 
 
 public class Supplier : User
 {
-public ICollection<Product> Products { get; set; } = new List<Product>();
+public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 }
 
 
 public class StationaryStoreEmployee : User
 {
 public int StationaryStoreId { get; set; }
-public StationaryStore StationaryStore { get; set; } = default!;
+public virtual StationaryStore StationaryStore { get; set; } = default!;
 }

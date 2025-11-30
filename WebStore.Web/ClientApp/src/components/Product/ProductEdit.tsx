@@ -1,0 +1,1 @@
+import { ProductAddOrEditForm } from "./ProductAddOrEditForm"; export const ProductEdit = () => <ProductAddOrEditForm labelName="Edit Product" />;

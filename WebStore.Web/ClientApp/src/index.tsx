@@ -6,6 +6,8 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { AddressProvider } from './contexts/AddressContext';
+import { ProductProvider } from './contexts/ProductContext';
+import { StationaryStoreProvider } from './contexts/StationaryStoreContext';
 
 const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href') as string;
 const rootElement = document.getElementById('root');
@@ -14,7 +16,11 @@ const root = createRoot(rootElement!);
 root.render(
   <BrowserRouter basename={baseUrl}>
     <AddressProvider>
-      <App />
+        <ProductProvider>
+            <StationaryStoreProvider>
+                <App />
+            </StationaryStoreProvider>
+        </ProductProvider>
     </AddressProvider>
   </BrowserRouter>
 );

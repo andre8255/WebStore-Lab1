@@ -5,7 +5,7 @@ using WebStore.ViewModels.VM;
 
 namespace WebStore.Web.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/Address")]
 [ApiController]
 public class AddressApiController : BaseApiController
 {
